@@ -1,12 +1,13 @@
 'use client';
 import React from 'react';
 import { useState } from 'react';
-import getUsers from '../libs/getUsers';
+import Link from 'next/link';
+import getPosts from '../libs/getPosts';
 const BlogPage = () => {
   const [data, setData] = useState(null);
   const fetchData = async () => {
     try {
-      const fetchedData = await getUsers();
+      const fetchedData = await getPosts();
       setData(fetchedData);
     } catch (error) {
       console.log('Boom', error);
@@ -22,7 +23,15 @@ const BlogPage = () => {
         {data ? (
           <div>
             {data.map((item) => {
-              return <h1 key={item.key}>{item.title}</h1>;
+              return (
+                <Link
+                  key={item.id}
+                  href={`/blogs/${item.id.toString()}`}
+                  className="block"
+                >
+                  {item.title}
+                </Link>
+              );
             })}
           </div>
         ) : (

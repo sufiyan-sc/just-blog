@@ -1,0 +1,19 @@
+.container{
+	border:2px solid #dcdcdc;
+	display: flex;
+	border-radius: 10rem;
+	align-items: center;
+	justify-content: center;
+	height: 24px;
+	padding:1px;
+	position: relative;
+	cursor: pointer;
+}
+.circle{
+	height: 20px;;
+	width: 20px;
+	border-radius: 50%;
+	background-color: #ff6347;
+	position: absolute;
+	transition: all 0.3s ease;
+}

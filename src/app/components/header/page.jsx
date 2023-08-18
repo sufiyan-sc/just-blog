@@ -18,11 +18,16 @@ const navItems = [
     title: 'Users',
     url: '/users',
   },
+  {
+    id: 4,
+    title: 'Portfolio',
+    url: '/portfolio',
+  },
 ];
 
 const Header = () => {
   return (
-    <div className="container mx-auto flex items-center justify-around">
+    <div className="container mx-auto flex items-center justify-around p-[24px]">
       <h1 className="text-3xl font-bold">
         <Link href="/">JustBlog</Link>
       </h1>
